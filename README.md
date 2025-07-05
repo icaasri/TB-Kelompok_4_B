@@ -1,16 +1,7 @@
-# bubuy
+# Bubuy - Aplikasi Berita Minimalis
 
-A new Flutter project.
+[![Flutter](https://img.shields.io/badge/Built%20with-Flutter-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
 
-## Getting Started
+Aplikasi mobile lintas platform yang dikembangkan sebagai bagian dari tugas besar mata kuliah Praktik Pemrograman Mobile. Proyek ini dibangun oleh **Kelompok 4**.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Bubuy adalah aplikasi berita yang dirancang dengan antarmuka yang bersih dan minimalis, memungkinkan pengguna untuk membaca, mencari, dan mengelola artikel berita dengan mudah.
