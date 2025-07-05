@@ -22,28 +22,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // 1. Sediakan ApiService
         Provider(create: (_) => ApiService()),
-
-        // 2. Sediakan AuthProvider, yang bergantung pada ApiService
         ChangeNotifierProvider(
           create: (context) => AuthProvider(
             apiService: Provider.of<ApiService>(context, listen: false),
           ),
         ),
-
-        // 3. Sediakan ArticleProvider, yang bergantung pada AuthProvider (untuk mendapatkan token)
         ChangeNotifierProxyProvider<AuthProvider, ArticleProvider>(
           create: (context) => ArticleProvider(
               apiService: Provider.of<ApiService>(context, listen: false)),
           update: (context, auth, previousArticleProvider) {
             final apiService = Provider.of<ApiService>(context, listen: false);
-            // Setiap kali auth berubah (misal setelah dapat token),
-            // update token di dalam ApiService.
             apiService.setToken(auth.token);
-
-            // Pastikan kita mengembalikan instance ArticleProvider yang sudah ada
-            // dan hanya meng-update referensi apiService-nya jika perlu.
             previousArticleProvider!.apiService = apiService;
             return previousArticleProvider;
           },
@@ -53,7 +43,11 @@ class MyApp extends StatelessWidget {
         builder: (context, auth, _) {
           return MaterialApp(
             title: 'Bubuy News',
-            theme: ThemeData(primarySwatch: Colors.deepPurple),
+            // --- PERUBAHAN TEMA UTAMA ---
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
             debugShowCheckedModeBanner: false,
             home: auth.isLoading
                 ? const SplashScreen()

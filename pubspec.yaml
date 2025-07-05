@@ -17,7 +17,8 @@ dependencies:
   fluttertoast: ^8.2.6
   flutter_launcher_icons: ^0.14.4
   cupertino_icons: ^1.0.6
-
+  another_carousel_pro: ^1.0.1
+  shared_preferences: ^2.2.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

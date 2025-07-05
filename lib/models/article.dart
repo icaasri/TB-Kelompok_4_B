@@ -33,8 +33,6 @@ class Article {
     );
   }
 
-  // --- PERBAIKAN UTAMA DI SINI ---
-  // Mengadopsi logika dari referensi untuk mencegah error di server
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {
       'title': title,
@@ -42,7 +40,6 @@ class Article {
       'category': category,
     };
 
-    // Hanya tambahkan field lain jika ada isinya (tidak null dan tidak kosong)
     if (summary != null && summary!.isNotEmpty) {
       data['summary'] = summary;
     }

@@ -14,7 +14,6 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
-  // Hanya ada dua layar: HomeScreen dan FavoritesScreen
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const FavoritesScreen(),
@@ -32,7 +31,6 @@ class _MainNavigationState extends State<MainNavigation> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      // BottomNavigationBar sekarang hanya memiliki dua item
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -45,7 +43,8 @@ class _MainNavigationState extends State<MainNavigation> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.deepPurple,
+        // --- PERUBAHAN WARNA NAVIGASI ---
+        selectedItemColor: Colors.blue[800], // Warna biru yang lebih kuat
         onTap: _onItemTapped,
       ),
     );
